@@ -1,0 +1,20 @@
+
+public class NumeralSystem {
+
+	public static void Convert(int in1, int in2, String S)
+	{
+		String[] splittedS = S.split(".");
+		String s1 = splittedS[0];
+		String s2 = splittedS[1];
+		System.out.print(s1 + " "+ s2);
+		
+	}
+	
+	public static void main(String[] args) 
+	{
+		
+		Convert(1,2,"123.456");
+
+	}
+
+}

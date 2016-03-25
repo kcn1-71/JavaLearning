@@ -1,0 +1,17 @@
+public class Permutations {
+
+	public static void Permut(String rez, String source)
+	{
+		int ls = source.length();
+		if (ls!=0)
+		{
+			
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+
+	}
+
+}

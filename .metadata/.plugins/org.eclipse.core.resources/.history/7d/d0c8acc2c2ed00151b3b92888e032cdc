@@ -1,0 +1,26 @@
+public class Permutations {
+
+	public static void Permut(String rez, String source)
+	{
+		int ls = source.length();
+		if (ls!=0)
+		{
+			for(int i=0; i < ls; i++)
+			{
+				rez += source.charAt(i);
+				source = source.substring(0, i) + source.substring(i, ls);
+				Permut(rez,source);
+			}
+			
+		}
+		System.out.print(rez + "\n" );
+	}
+
+	public static void main(String[] args) {
+		String rez = null;
+		String source = "1234";
+		Permut(rez,source);
+
+	}
+
+}

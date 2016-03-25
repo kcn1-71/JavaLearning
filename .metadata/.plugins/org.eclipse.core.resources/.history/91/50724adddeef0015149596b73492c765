@@ -1,0 +1,16 @@
+
+public class ShakerSort {
+
+	public static int K( int a, int b ) {
+	    return a;
+	}
+
+	public static void main(String[] args) {
+
+		int a = 1, b = 2;
+		System.out.print(a + " " + b + "\n");
+		b = K(a, a=b);
+		System.out.print(a + " " + b + "\n");
+	}
+
+}

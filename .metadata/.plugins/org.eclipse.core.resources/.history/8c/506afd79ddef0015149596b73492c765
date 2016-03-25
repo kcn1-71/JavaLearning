@@ -1,0 +1,20 @@
+
+public class ShakerSort {
+
+	public static void Swap(int a, int b) {
+		a ^= b;
+		b ^= a;
+		a ^= b;
+	}
+
+	public static void main(String[] args) {
+
+		int a = 1, b = 2;
+		System.out.print(a + " " + b + "\n");
+		a ^= b;
+		b ^= a;
+		a ^= b;
+		System.out.print(a + " " + b + "\n");
+	}
+
+}

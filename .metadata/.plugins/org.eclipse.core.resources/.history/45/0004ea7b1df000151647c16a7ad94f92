@@ -1,0 +1,25 @@
+
+public class CountingSort {
+
+	public static void CSort(int[] Arr) {
+
+		int[] Count = new int[10];
+
+		for (int i = 0; i < Arr.length; i++) {
+			Count[Arr[i]] += 1;
+		}
+		int b = 0;
+		for (int j = 0; j < Count.length; j++) {
+			for (int i = 0; i < Count[j] - 1; i++)
+				Arr[b] = j;
+			b = b + 1;
+		}
+
+	}
+
+	public static void main(String[] args) {
+		int[] A = new int[] { 1, 2, 3, 3, 2, 2, 1, 1, 2, 2, 3, 3, 2, 1, 1, 2, 3 };
+		CSort(A);
+	}
+
+}

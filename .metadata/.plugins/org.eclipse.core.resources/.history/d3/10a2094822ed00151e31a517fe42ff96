@@ -1,0 +1,42 @@
+import java.util.Arrays;
+
+public class NumeralSystem {
+
+	public static String ConvertLeft(int b1, int b2, String S)
+	{
+		String[] splittedS = S.split("\\.");
+		String s1 = splittedS[0];
+		
+		int N=0;
+		for (int i=0; i<s1.length(); i++)
+		{
+			N = N * b1 + Character.getNumericValue(s1.charAt(i));		
+		}
+		
+		if (N==0) return "0";
+		
+		int r1 = 1;
+		int[] d1 = new int[50];
+		while (N!=0)
+		{
+			d1[r1] = N % b2;
+	        N = N / b2;
+	        r1 = r1 + 1;	
+		}
+		
+		String out;
+		for (int i=r1-1; i == 1; i--)
+		{
+			out+=Character.forDigit(d1[i],10);
+		}
+		return out;
+	}
+	
+	public static void main(String[] args) 
+	{
+		
+		System.out.print(ConvertLeft(10,2,"16.456"));		
+
+	}
+
+}

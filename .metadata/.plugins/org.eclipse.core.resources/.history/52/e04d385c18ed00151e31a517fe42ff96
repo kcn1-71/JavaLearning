@@ -1,0 +1,19 @@
+
+public class NumeralSystem {
+
+	public static String Convert(int in1, int in2, String S)
+	{
+		String[] splittedS = S.split(".");
+		
+		
+		return null;
+	}
+	
+	public static void main(String[] args) 
+	{
+		
+		Convert(1,2,"123.456");
+
+	}
+
+}

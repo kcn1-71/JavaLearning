@@ -17,5 +17,4 @@ public class InsertionSort {
 		int[] A = new int[] { 2, 4, 1, 5, 3, 7, 9, 34, 3, 7, 8, 5, 4, 3, 9, 9, 6, 6 };
 		InsSort(A);
 	}
-
 }

@@ -3,11 +3,12 @@ public class MyQSort {
 
 	public static void qSort(int[] A, int left, int right) {
 		int i = left, j = right;
-		int p = i + (j - i)/2;
+		int p = A[i + (j - i) / 2];
+		
 		while (i <= j) {
-			while (A[i] < A[p])
+			while (A[i] < p)
 				i++;
-			while (A[p] < A[j])
+			while (p < A[j])
 				j--;
 			if (i <= j) {
 				int temp = A[i];
@@ -24,7 +25,7 @@ public class MyQSort {
 	}
 
 	public static void main(String[] args) {
-		int[] Arr = new int[] { 2, 4, 1, 5, 3, 7, 9, 7, 3, 7, 8, 5, 4, 3, 9, 9, 6, 6,0 };
+		int[] Arr = new int[] { 2, 7, 1, 7, 3, 7, 9, 7, 3, 7, 8, 5, 4, 7, 9, 7, 6, 6, 0 };
 		qSort(Arr, 0, Arr.length - 1);
 	}
 

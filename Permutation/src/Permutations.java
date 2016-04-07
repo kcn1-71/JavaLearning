@@ -21,7 +21,7 @@ public class Permutations {
 
 	public static void main(String[] args) {
 		String rez = "";
-		String source = "1234";
+		String source = "123";
 		Permut(rez, source);
 
 	}

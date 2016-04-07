@@ -1,0 +1,2 @@
+INDEX VERSION 1.127+E:\GoogleDisk\Java projects\.metadata\.plugins\org.eclipse.jdt.core
+3686069823.index

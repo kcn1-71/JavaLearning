@@ -1,14 +1,13 @@
-import java.util.Hashtable;
-import java.util.Map;
+import java.util.*;
 
 public class StringSearch {
 
 	public static Map<Character, Integer> ArrayOfShifts = new Hashtable<Character, Integer>();
 
 	public static void ShiftOrganization(String S) {
-		for (int i = S.length() - 2, j = 0; i >= 0; i--, j++) {
+		for (int i = S.length() - 2; i >= 0; i--) {
 			if (!ArrayOfShifts.containsKey(S.charAt(i))) {
-				ArrayOfShifts.put(S.charAt(i), S.length() - j - 1);
+				ArrayOfShifts.put(S.charAt(i), S.length() - i - 1);
 			}
 		}
 	}
@@ -37,7 +36,7 @@ public class StringSearch {
 	public static void main(String[] args) {
 
 		String text = "0123456789";
-		String S = "254";
+		String S = "6789";
 		
 		ShiftOrganization(S);
 		System.out.print(ABM(text,S));

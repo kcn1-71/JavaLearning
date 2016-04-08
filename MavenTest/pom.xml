@@ -4,7 +4,7 @@
  
   <groupId>ru.lesson</groupId>
   <artifactId>lessons</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1</version>
   <packaging>jar</packaging>
  
   <name>Maven Quick Start Archetype</name>

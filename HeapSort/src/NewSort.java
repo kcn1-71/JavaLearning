@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class NewSort {
 
@@ -52,9 +53,13 @@ public class NewSort {
 	}
 
 	public static void main(String[] args) {
-		int[] Arr = new int[] { 3, 2, 1, 5, 4, 7, 8, 8, 9, 6, 6, 1, 1, 5, 5, 5, 4, 4, 7, 8, 8, 66, 4, 4, 2, 2, 1, 4, 6,
-				6, 4, 4, 2, 65, 0 };
-		sort(Arr);
+		//int[] Arr = new int[] { 3, 2, 1, 5, 4, 7, 8, 8, 9, 6, 6, 1, 1, 5, 5, 5, 4, 4, 7, 8, 8, 66, 4, 4, 2, 2, 1, 4, 6,
+		//		6, 4, 4, 2, 65, 0 };
+		//sort(Arr);
+
+		int i = 0;
+		System.out.println(++i == i++);
+		System.out.println(i++ == i++);
 	}
 
 }

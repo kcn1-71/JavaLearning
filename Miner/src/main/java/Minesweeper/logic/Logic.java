@@ -31,12 +31,14 @@ public class Logic implements IMinesweeperLogic {
     public boolean shouldFinish() {
         boolean finish = false;
         int check = 0;
-        for (ICell[] row : this.cells)
-            for (ICell cell : row)
+        for (ICell[] row : this.cells) {
+            for (ICell cell : row) {
                 if ((cell.isSupposingBomb() && cell.isBomb()) ||
-                        (cell.isChecked() && !cell.isBomb()) || (!cell.isChecked() && cell.isBomb())) {
+                        ((cell.isSupposingEmpty()) && !cell.isBomb()) || (!cell.isSupposingBomb() && cell.isBomb())) {
                     check++;
                 }
+            }
+        }
         if (check == (boardSize * boardSize))
             finish = true;
         return finish;
@@ -44,9 +46,11 @@ public class Logic implements IMinesweeperLogic {
 
     public void check(int x, int y, boolean bomb) {
         if (!bomb)
-            this.cells[x][y].check();
-        if (bomb && !this.cells[x][y].isChecked())
+            this.cells[x][y].supposingEmpty();
+        if (bomb && !this.cells[x][y].isSupposingEmpty())
             this.cells[x][y].supposingBomb();
+        else if (bomb && this.cells[x][y].isSupposingEmpty())
+            System.out.println("Вы уже открыли эту клетку!\n");
     }
 
     public boolean checkTheFirstMove() {
@@ -80,7 +84,7 @@ public class Logic implements IMinesweeperLogic {
         while (sumBombs > 0) {
             int row = random.nextInt(boardSize);
             int column = random.nextInt(boardSize);
-            if (!this.cells[row][column].isBomb() && !this.cells[row][column].isChecked()) {
+            if (!this.cells[row][column].isBomb() && !this.cells[row][column].isSupposingEmpty()) {
                 this.cells[row][column] = new Cell(true);
                 sumBombs--;
             }
@@ -111,7 +115,8 @@ public class Logic implements IMinesweeperLogic {
             for (int i = 0; i < boardSize; i++) {
                 for (int j = 0; j < boardSize; j++) {
                     // Если ячейка пустая и мы её ещё не проверяли
-                    if (!cells[i][j].isChecked()) {
+                    if (cells[i][j].isSupposingEmpty() && !cells[i][j].isChecked()) {
+
                         // Если возле ячейки нет бомб
                         if (checkingNearbyBombs(i, j) == 0) {
                             sumEmpty++;

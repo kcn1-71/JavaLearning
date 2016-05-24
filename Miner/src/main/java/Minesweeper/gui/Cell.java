@@ -9,6 +9,7 @@ public class Cell implements ICell<Graphics> {
     private boolean bomb;
     private boolean checked = false;
     private boolean supposing = false;
+    private boolean supposingEmpty = false;
     private int countNearbyBombs;
 
     public Cell(boolean bomb){
@@ -25,6 +26,14 @@ public class Cell implements ICell<Graphics> {
 
     public boolean isSupposingBomb() {
         return this.supposing;
+    }
+
+    public boolean isSupposingEmpty() {
+        return this.supposingEmpty;
+    }
+
+    public void supposingEmpty() {
+        this.supposingEmpty = true;
     }
 
     public void setNearbyBombs(int countNearbyBombs) {

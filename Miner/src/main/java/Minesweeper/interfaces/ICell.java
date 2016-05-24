@@ -17,6 +17,10 @@ public interface ICell<T> {
      */
     boolean isSupposingBomb();
 
+    public boolean isSupposingEmpty();
+
+    public void supposingEmpty();
+
     void setNearbyBombs(int countNearbyBombs);
     /**
      * возвращает значение поля NearbyBombs

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DragNDropTest</string>
+    <string name="dragtext">Drag now!</string>
+</resources>
